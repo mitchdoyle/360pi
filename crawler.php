@@ -66,11 +66,12 @@ if((array_key_exists($uen,$crawled_urls)==0 || $crawled_urls[$uen] < date("YmdHi
 		foreach($html_base1->find('div[class=contentright]') as $prod)
 		{ 			
 			if($counter==0){
-				echo "Product Details: <br/><br/>";
+				echo "Product Details: <br/>";
 				echo $prod->find('h2',0)->innertext."<br/>";
 				echo "Price: ";
 				echo $prod->find('span[class=price]',0)->innertext."<br/>";
 				$cart = $prod->find('a[class=addToCart]',0)->innertext;
+				echo "Availability: ";
 					if($cart = ""){
 						echo "<br/>Out of Stock<br/>";
 					}
